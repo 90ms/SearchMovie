@@ -1,2 +1,10 @@
 # Sample Structure Project
-Clean Architecture MVVM
+
+- CleanArchitecture 
+- MVVM
+- Coroutine + Flow
+- Naver API
+- Kotlin DSL
+- Hilt
+- Room
+- Etc
