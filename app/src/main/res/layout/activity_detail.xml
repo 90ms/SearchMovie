@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.a90ms.sample.ui.webview.DetailViewModel" />
+
+        <variable
+            name="movieVm"
+            type="com.a90ms.sample.ui.base.MovieViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/mtb_web"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/arrow_back_black_24dp"
+            bindToolbarTitle="@{vm.item.title}"
+            app:titleCentered="true"
+            tools:title="타이틀" />
+
+        <include
+            android:id="@+id/layout_item"
+            layout="@layout/layout_movie_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:item="@{vm.item}"
+            app:layout_constraintTop_toBottomOf="@id/mtb_web"
+            app:vm="@{movieVm}" />
+
+        <WebView
+            android:id="@+id/webView"
+            bindWebUrl="@{vm.url}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
