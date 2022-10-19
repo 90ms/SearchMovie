@@ -1,4 +1,4 @@
-# Sample Structure Project
+# SearchMovie
 
 - CleanArchitecture 
 - MVVM
